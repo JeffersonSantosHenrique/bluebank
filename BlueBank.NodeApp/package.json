@@ -1,0 +1,23 @@
+{
+  "name": "bluebank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jefferson Henrique dos Santos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "fs-extra": "^0.26.5",
+    "moment": "^2.11.2",
+    "mongoose": "^4.4.2",
+    "mongoose-double": "0.0.1"
+  },
+  "devDependencies": {
+    "request": "^2.69.0"
+  }
+}

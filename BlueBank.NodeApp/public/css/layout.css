@@ -1,0 +1,13 @@
+.md-toolbar-tools{
+	color: rgb(242, 251, 253);
+	background: rgb(3, 169, 245);
+}
+
+md-input-container:not(.md-input-invalid).md-input-focused .md-input{
+    border-color: #03a9f5;
+}
+
+md-select-menu md-option:active,
+md-select-menu md-option:focus[selected] {
+  color: #03a9f5;
+}

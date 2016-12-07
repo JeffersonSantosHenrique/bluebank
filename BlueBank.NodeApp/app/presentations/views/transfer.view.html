@@ -1,0 +1,66 @@
+<md-toolbar layout="row">
+  	<div class="md-toolbar-tools">
+    	<md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+      		<md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+    	</md-button>
+    	<h1>Blue Bank</h1>
+  	</div>
+</md-toolbar>
+
+<md-content layout-padding>
+    <div>
+    	<form name="accountForm">
+    		<h3>Dados Conta Origem</h3>
+			<div layout-gt-sm="row">
+
+			  <md-input-container class="md-block" flex-gt-sm>
+			    <label>Número Agência</label>
+			    <input ng-model="vm.formData.source.agency" type="text" ng-required="true" ng-blur="vm.onExitAgency(vm.formData.source, true)">
+			  </md-input-container>
+
+			  <md-input-container class="md-block" flex-gt-sm>
+			    <label>Número Conta</label>
+			    <input ng-model="vm.formData.source.account" type="text" ng-required="true" ng-blur="vm.onExitAccount(vm.formData.source, true)">
+			  </md-input-container>
+
+			  <div layout="row" layout-sm="column" layout-align="space-around" ng-if="vm.loading">
+	      		<md-progress-circular md-mode="indeterminate"></md-progress-circular>
+	    	  </div>
+
+			  <md-input-container class="md-block" flex-gt-sm>
+			    <label>Saldo Atual</label>
+			    <input ng-model="vm.formData.source.balance" type="text" disabled>
+			  </md-input-container>
+
+			</div>
+
+			<h3>Dados Conta Destino</h3>
+			<div layout-gt-sm="row">
+
+			  <md-input-container class="md-block" flex-gt-sm>
+			    <label>Número Agência</label>
+			    <input ng-model="vm.formData.destination.agency" type="text" ng-required="true" ng-blur="vm.onExitAgency(vm.formData.source, false)">
+			  </md-input-container>
+
+			  <md-input-container class="md-block" flex-gt-sm>
+			    <label>Número Conta</label>
+			    <input ng-model="vm.formData.destination.account" type="text" ng-required="true" ng-blur="vm.onExitAccount(vm.formData.destination, false)">
+			  </md-input-container>			   
+
+			</div>
+
+			<h3>Transfêrencia</h3>
+			<div layout-gt-sm="row">
+				<md-input-container class="md-block" flex-gt-sm>
+			    	<label>Valor a transferir</label>
+			    	<input ng-model="vm.formData.transfer" type="number" ng-required="true">
+			  	</md-input-container>
+			</div>
+
+			<div layout-gt-sm="row">
+			  <md-button class="md-raised" ng-click="vm.onClickTransfer(vm.formData)">Transferir</md-button>	
+			</div>
+
+		</form>
+	</div>
+</md-content>
